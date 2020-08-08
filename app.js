@@ -29,10 +29,11 @@ var commentRoutes      =  require("./routes/comments"),
 
 // seedDB();
 mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://Dhruv:HMzzca9MRKlvPDjq@cluster0.w3xzj.mongodb.net/<dbname>?retryWrites=true&w=majority",{useNewUrlParser:true, useCreateIndex:True})
 app.use(expressSanitizer());
 app.set("view engine","ejs");
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-// app.use(logger('dev'));
+// app.use(logger('dev'));`
 // app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));

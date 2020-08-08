@@ -151,7 +151,7 @@ router.get("/new",middleware.isLoggedin,function(req,res){
 
 
 router.post("/",middleware.isLoggedin, upload.array('image'),async(req,res)=>{
-	const uploader = async (path) => await cloudinary.upload(path, 'Images');
+	const uploader = async (path) => await cloudinary.uploads(path, 'Images');
 	const images = []
     const files = req.files;
     for (const file of files) {
